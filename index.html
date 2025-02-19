@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <style>
+      body {
+        max-width: 800px;
+        text-align: center;
+        margin: 30 auto 30 auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    Enter a YouTube ID: <input type="text"></input> <button>Get It!</button>
+    <br>
+    <br>
+    <br>
+    <div id="video"></div>
+
+    <script>
+      document.querySelector('button').onclick = () => {
+        const youTubeId = document.querySelector('input').value;
+        player = new YT.Player('video', {
+          videoId: youTubeId,
+          /*
+          playerVars: {
+            rel: '0'
+          },
+          */
+          events: {
+            'onReady': () => { player.playVideo(); }
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
