@@ -1,31 +1,24 @@
 <html>
   <head>
-    <script src="https://www.youtube.com/iframe_api"></script>
     <style>
       body {
         max-width: 800px;
         text-align: center;
         margin: 30 auto 30 auto;
       }
+      button {
+        margin-bottom: 50px;
+      }
     </style>
   </head>
 
   <body>
     Enter a YouTube ID: <input type="text"></input> <button>Get It!</button>
-    <br>
-    <br>
-    <br>
     <div id="video"></div>
-
     <script>
       document.querySelector('button').onclick = () => {
         const youTubeId = document.querySelector('input').value;
-        player = new YT.Player('video', {
-          videoId: youTubeId,
-          events: {
-            'onReady': () => { player.playVideo(); }
-          }
-        });
+        document.querySelector('#video').innerHTML = `<iframe width="800" height="500" src="https://www.youtube.com/embed/${youTubeId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
       }
     </script>
   </body>
