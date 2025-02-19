@@ -22,11 +22,6 @@
         const youTubeId = document.querySelector('input').value;
         player = new YT.Player('video', {
           videoId: youTubeId,
-          /*
-          playerVars: {
-            rel: '0'
-          },
-          */
           events: {
             'onReady': () => { player.playVideo(); }
           }
